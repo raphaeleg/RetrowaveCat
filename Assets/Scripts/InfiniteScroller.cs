@@ -12,7 +12,7 @@ public class InfiniteScroller : MonoBehaviour
     }
     private void Update()
     {
-        Vector2 pos = _img.uvRect.position + offset * Time.deltaTime;
+        Vector2 pos = _img.uvRect.position + offset * 0.01f;//Time.deltaTime;
         _img.uvRect = new Rect(pos, _img.uvRect.size);
     }
 }

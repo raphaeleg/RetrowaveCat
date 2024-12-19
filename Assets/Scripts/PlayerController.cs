@@ -1,14 +1,17 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private float horizontal = 0f;
-    private float speed = 16f;
+    private float speed = 10f;
     private float jumpPower = 24f;
     private float speedMod = 2f;
     private bool isFacingRight = true;
     private bool isDashing = false;
     private bool isCrouching = false;
+    private bool isInAir = false;
+    private bool isAirCooldown = false;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -26,7 +29,10 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetButtonUp("Dash")) { SetDash(false); }
         if (Input.GetButtonDown("Crouch")) { isCrouching = !isCrouching; }
 
-        if (Input.GetButtonDown("Sit")) { animator.SetTrigger("sit"); }
+        if (Input.GetButtonDown("Sit")) { 
+            animator.SetTrigger("sit");
+            EventManager.TriggerEvent("Sit", isFacingRight ? 1 : -1);
+        }
         //if (Input.GetButtonDown("Meow")) { }
     }
 
@@ -43,6 +49,11 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity.y
         );
         animator.SetFloat("speed", Mathf.Abs(velocityX));
+
+        if (!isAirCooldown && isInAir && IsGrounded()) { 
+            isInAir = false;
+            animator.SetBool("isJumping", false);
+        }
     }
 
     private void OnPressJump()
@@ -58,6 +69,15 @@ public class PlayerController : MonoBehaviour
             updateVel.y *= 0.5f;
         }
         rb.linearVelocity = updateVel;
+        isInAir = true;
+        isAirCooldown = true;
+        animator.SetBool("isJumping", true);
+        StartCoroutine("AirCountdown");
+    }
+    private IEnumerator AirCountdown()
+    {
+        yield return new WaitForSeconds(1f);
+        isAirCooldown = false;
     }
 
     private bool IsGrounded()
