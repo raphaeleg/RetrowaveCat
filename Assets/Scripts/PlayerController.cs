@@ -33,7 +33,9 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("sit");
             EventManager.TriggerEvent("Sit", isFacingRight ? 1 : -1);
         }
-        //if (Input.GetButtonDown("Meow")) { }
+        if (Input.GetButtonDown("Meow")) {
+            EventManager.TriggerEvent("Meow", 1);
+        }
     }
 
     private void FixedUpdate()
