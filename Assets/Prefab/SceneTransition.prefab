@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 2877895111640926679}
   - component: {fileID: 7903539963518295639}
   - component: {fileID: 3693260418465353118}
+  - component: {fileID: 6196482225681301622}
   m_Layer: 5
   m_Name: SceneTransition
   m_TagString: Untagged
@@ -226,3 +227,15 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &6196482225681301622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157845534969503825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64322376b4daa5748b25bc815b846def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

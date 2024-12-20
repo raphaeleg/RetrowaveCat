@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine("MinigameTimer");
+        EventManager.TriggerEvent("ChangeMusicArea", 2);
     }
 
     private void Update()
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         var mouse = Instantiate(mousePrefab, mouseParent);
         int randPoint = UnityEngine.Random.Range(0, mouseSpawnPoints.childCount);
         mouse.transform.position = mouseSpawnPoints.GetChild(randPoint).transform.position;
+        EventManager.TriggerEvent("SpawnMouse", 1);
     }
 
     private void AddScore(int val)
@@ -107,6 +109,7 @@ public class GameManager : MonoBehaviour
     private void EndMinigame()
     {
         ClearMouse();
+        EventManager.TriggerEvent("ChangeMusicArea", 1);
 
         foreach (Transform child in GameUI)
         {

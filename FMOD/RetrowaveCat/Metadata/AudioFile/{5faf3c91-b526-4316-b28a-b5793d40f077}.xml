@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5faf3c91-b526-4316-b28a-b5793d40f077}">
+		<property name="assetPath">
+			<value>Haze.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>149.75988662131519</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{24206d06-49d5-404a-9b30-2206d0ec71cb}</destination>
+		</relationship>
+	</object>
+</objects>
