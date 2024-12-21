@@ -15,6 +15,11 @@ public class MouseHuntManager : MonoBehaviour
     [SerializeField] private float time = 15f;
     [SerializeField] private int score = 0;
 
+    [Header("After Minigame")]
+    private bool pickedSpot = false;
+    [SerializeField] private TMP_Text instructions;
+    [SerializeField] private GameObject humanPrefab;
+
     [Header("Connectors")]
     [SerializeField] GameObject PauseScreen;
     [SerializeField] Transform GameUI;
@@ -110,6 +115,7 @@ public class MouseHuntManager : MonoBehaviour
     {
         ClearMouse();
         EventManager.TriggerEvent("ChangeMusicArea", 1);
+        //Instantiate(humanPrefab); //TODO: make human script
 
         foreach (Transform child in GameUI)
         {
@@ -119,7 +125,8 @@ public class MouseHuntManager : MonoBehaviour
     }
     private void ShowCorpses(int isFacingRight)
     {
-        if (time > 0) { return; }
+        if (time > 0 || pickedSpot) { return; }
+        pickedSpot = true;
 
         ClearMouse();
         Vector3 pos = player.position;
@@ -130,7 +137,15 @@ public class MouseHuntManager : MonoBehaviour
             var mouse = Instantiate(mousePrefab, mouseParent);
             mouse.GetComponent<Mouse>().speed = 0f;
         }
+        instructions.text = "";
+        StartCoroutine("EndScene");
+    }
 
-        EventManager.TriggerEvent("EndMouseHunt",1);
+    private IEnumerator EndScene()
+    {
+        yield return new WaitForSeconds(2f);
+        EventManager.TriggerEvent("EndMouseHunt", 1);
+        yield return new WaitForSeconds(1f);
+        EventManager.TriggerEvent("LoadMainMenu", 1);
     }
 }

@@ -24,7 +24,8 @@ public class SceneLoader : MonoBehaviour
         }
         Instance = this;
         SubscribedEvents = new() {
-            {"LoadMouseHunt", LoadMouseHunt }
+            {"LoadMouseHunt", LoadMouseHunt },
+            {"LoadMainMenu", LoadMainMenu }
         };
     }
     private void OnEnable()
@@ -53,7 +54,6 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadScene(string name)
     {
-        Debug.Log("pressed");
         Time.timeScale = 1f; // Always load scene with timescale 1
         EventManager.TriggerEvent("AnimateLoadScene", DURATION);
         Instance.StartCoroutine(Transition(name));
@@ -68,9 +68,10 @@ public class SceneLoader : MonoBehaviour
         LoadScene("Tutorial");
     }
 
-    public static void LoadMainMenu()
+    public static void LoadMainMenu(int val)
     {
         LoadScene("MainMenu");
+        EventManager.TriggerEvent("ChangeMusicArea", 0);
     }
 
     public static void LoadStory(int val)
