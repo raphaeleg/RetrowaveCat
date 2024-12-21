@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public class GameManager : MonoBehaviour
+public class MouseHuntManager : MonoBehaviour
 {
     [Header("Mouse Minigame")]
     [SerializeField] private GameObject mousePrefab;
@@ -131,6 +131,6 @@ public class GameManager : MonoBehaviour
             mouse.GetComponent<Mouse>().speed = 0f;
         }
 
-        // TODO: scream
+        EventManager.TriggerEvent("EndMouseHunt",1);
     }
 }

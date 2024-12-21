@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9165116622159738335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Scream
+  m_EditorClassIdentifier: 
+  Path: event:/Scream
+  Guid:
+    Data1: -413069606
+    Data2: 1174531043
+    Data3: -550309238
+    Data4: -1973088230
+  Banks:
+  - {fileID: -8385954670587189786}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8385954670587189786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/RetrowaveCat/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638702876050794094
+  lastModified: 638703923051971723
   FileSizes:
   - Name: Desktop
-    Value: 43904
+    Value: 31488
   Exists: 1
 --- !u!114 &-7670215234396903563
 MonoBehaviour:
@@ -62,10 +89,10 @@ MonoBehaviour:
   Path: FMOD/RetrowaveCat/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638702876049218178
+  lastModified: 638703062606787613
   FileSizes:
   - Name: Desktop
-    Value: 1146
+    Value: 1182
   Exists: 1
 --- !u!114 &-4076134082340725706
 MonoBehaviour:
@@ -145,12 +172,13 @@ MonoBehaviour:
   - {fileID: -2293460633556053366}
   - {fileID: -4076134082340725706}
   - {fileID: -7670215234396903563}
+  - {fileID: -9165116622159738335}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7623412027158595941}
   StringsBanks:
   - {fileID: -5697431807739169487}
-  cacheTime: 638702877107545238
+  cacheTime: 638703923051971723
   cacheVersion: 131622
 --- !u!114 &1292082211524868287
 MonoBehaviour:
@@ -268,7 +296,7 @@ MonoBehaviour:
   Path: FMOD/RetrowaveCat/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638702876049188054
+  lastModified: 638703062606750249
   FileSizes:
   - Name: Desktop
     Value: 1340

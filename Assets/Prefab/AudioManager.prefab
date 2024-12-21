@@ -137,3 +137,10 @@ MonoBehaviour:
       Data3: -416314229
       Data4: -1570526042
     Path: event:/Attack
+  <Scream>k__BackingField:
+    Guid:
+      Data1: -413069606
+      Data2: 1174531043
+      Data3: -550309238
+      Data4: -1973088230
+    Path: event:/Scream

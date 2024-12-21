@@ -22,6 +22,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Meow { get; private set; }
     [field: SerializeField] public EventReference Mouse { get; private set; }
     [field: SerializeField] public EventReference Attack { get; private set; }
+    [field: SerializeField] public EventReference Scream { get; private set; }
     #endregion
 
     #region Event Listeners
@@ -39,6 +40,7 @@ public class FMODEvents : MonoBehaviour
                 { "Meow", SFX_Meow },
                 { "SpawnMouse", SFX_Mouse },
                 { "CaughtMouse", SFX_Attack },
+                { "EndMouseHunt", SFX_Scream },
 
                 { "ChangeMusicArea", ChangeArea },
             };
@@ -85,6 +87,10 @@ public class FMODEvents : MonoBehaviour
     private void SFX_Attack(int val = 0)
     {
         Play(Attack);
+    }
+    private void SFX_Scream(int val = 0)
+    {
+        Play(Scream);
     }
     public void ChangeArea(int area)
     {

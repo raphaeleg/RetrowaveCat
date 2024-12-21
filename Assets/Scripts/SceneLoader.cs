@@ -24,6 +24,7 @@ public class SceneLoader : MonoBehaviour
         }
         Instance = this;
         SubscribedEvents = new() {
+            {"LoadMouseHunt", LoadMouseHunt }
         };
     }
     private void OnEnable()
@@ -33,6 +34,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator DelayedSubscription()
     {
         yield return new WaitForSeconds(0.0001f);
+        if (SubscribedEvents.Count == 0) { yield return null; }
         foreach (var pair in SubscribedEvents)
         {
             EventManager.StartListening(pair.Key, pair.Value);
@@ -41,6 +43,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnDisable()
     {
+        if (SubscribedEvents.Count == 0) { return; }
         foreach (var pair in SubscribedEvents)
         {
             EventManager.StopListening(pair.Key, pair.Value);
@@ -68,6 +71,16 @@ public class SceneLoader : MonoBehaviour
     public static void LoadMainMenu()
     {
         LoadScene("MainMenu");
+    }
+
+    public static void LoadStory(int val)
+    {
+        LoadScene("Story");
+    }
+
+    public static void LoadMouseHunt(int val)
+    {
+        LoadScene("MouseHunt");
     }
 
     public static void LoadGameplay(int val)
