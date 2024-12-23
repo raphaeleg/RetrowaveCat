@@ -636,6 +636,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3380499820461379305, guid: 859c87feea0ae2c4db6c5aac0fc3fce4, type: 3}
   m_PrefabInstance: {fileID: 426064619}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &428752636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4790584910492498956, guid: 0991327275a0c2e4caf09fd9e338af9c, type: 3}
+  m_PrefabInstance: {fileID: 629291021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7113739406fae8c4f9baecb2b3ac2613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438794395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,12 +1377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1924,12 +1935,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2384,7 +2395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203021702162615064, guid: 859c87feea0ae2c4db6c5aac0fc3fce4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7203021702162615064, guid: 859c87feea0ae2c4db6c5aac0fc3fce4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2393,7 +2404,7 @@ PrefabInstance:
     - target: {fileID: 7203021702162615064, guid: 859c87feea0ae2c4db6c5aac0fc3fce4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4790584910492498956, guid: 0991327275a0c2e4caf09fd9e338af9c, type: 3}
+      objectReference: {fileID: 428752636}
     - target: {fileID: 7203021702162615064, guid: 859c87feea0ae2c4db6c5aac0fc3fce4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

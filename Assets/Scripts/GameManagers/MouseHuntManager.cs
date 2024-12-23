@@ -100,7 +100,7 @@ public class MouseHuntManager : MonoBehaviour
 
     private void AddScore(int val)
     {
-        if (time < 0) { return; }
+        if (time < 0 || pickedSpot) { return; }
         score += val;
         scoreText.text = "x"+score.ToString()+" caught";
     }
